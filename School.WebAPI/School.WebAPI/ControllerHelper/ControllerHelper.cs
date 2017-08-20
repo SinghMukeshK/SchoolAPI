@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using School.DataAccessLayer;
+
 namespace School.WebAPI.ControllerHelper
 {
-    public class AddressTypeHelper
+    public class ControllerHelper
     {
         SchoolContext _dbContext = new SchoolContext();
 
@@ -13,5 +14,13 @@ namespace School.WebAPI.ControllerHelper
         {
             return _dbContext.AddressTypes.ToList();
         }
+
+        public List<Menu> GetMenus()
+        {
+            return _dbContext.Menus.ToList();
+        }
+
+
+
     }
 }

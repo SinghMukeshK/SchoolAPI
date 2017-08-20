@@ -30,5 +30,6 @@ namespace School.DataAccessLayer
         public virtual DbSet<Region> Regions { get; set; }
         public virtual DbSet<School> Schools { get; set; }
         public virtual DbSet<UserGroup> UserGroups { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
     }
 }

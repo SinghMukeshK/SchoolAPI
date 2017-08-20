@@ -11,16 +11,21 @@ namespace School.WebAPI.Controllers
 {
     public class APIController : ApiController
     {
-        private AddressTypeHelper _addressTypeHelper;
+        private ControllerHelper.ControllerHelper _controllerHelper;
         public APIController()
         {
-            _addressTypeHelper = new AddressTypeHelper();
+            _controllerHelper = new ControllerHelper.ControllerHelper();
         }
 
         [Route("api/GetAddressTypes")]
-        public List<AddressType> GetAddressTypes()
+        public AddressType[] GetAddressTypes()
         {
-            return _addressTypeHelper.GetAddressType();
+            return _controllerHelper.GetAddressType().ToArray();
+        }
+        [Route("api/GetMenus")]
+        public Menu[] GetMenus()
+        {
+            return _controllerHelper.GetMenus().ToArray();
         }
     }
 }
